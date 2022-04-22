@@ -17,6 +17,8 @@ Client
   ```
    Client:
   ```
-  cmake CMakeLists.txt
+  mkdir Build
+  cd ./Build
+  cmake ..
   make
   ```
