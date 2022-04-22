@@ -8,7 +8,7 @@ Server
 Client
 > The client contains a single header for the UDP Client, the Socket.cpp takes input via command line for the connection setup.
     
-## Build
+## Building
    Server:
   ```
   npm init
