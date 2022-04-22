@@ -3,7 +3,7 @@
 
 ## About
 Server
-> The sever is made for nodeJS, it makes a UDP Server with DGRAM.
+> The sever is made for nodeJS, it makes a UDP Server with DGRAM. Default port is `2222`.
 
 Client
 > The client contains a single header for the UDP Client, the Socket.cpp takes input via command line for the connection setup.
