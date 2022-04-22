@@ -9,14 +9,14 @@ Client
 > The client contains a single header for the UDP Client, the Socket.cpp takes input via command line for the connection setup.
     
 ## Build
-    Server:
-    ```
-    npm init
-    npm install dgram
-    npm start
-    ```
-    Client:
-    ```
-    cmake CMakeLists.txt
-    make
-    ```
+   Server:
+  ```
+  npm init
+  npm install dgram
+  npm start
+  ```
+   Client:
+  ```
+  cmake CMakeLists.txt
+  make
+  ```
