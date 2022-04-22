@@ -1,9 +1,17 @@
 #include <Socket.hpp>
 
 int main()  {
+    std::string tIPAdress;
+    int tPort;
 
-    UDPClient client(2222, "127.0.0.1");
+    std::cout << "[#] Input desired connection address\n> ";
+    std::cin >> tIPAdress;
+    std::cout << "[#] Input desired connection port\n> ";
+    std::cin >> tPort;
+
+    UDPClient client(tPort, tIPAdress);
     client.Send("This message is going to the nodeJS server!");
     client.Recive();
+
     return 0;
 }
