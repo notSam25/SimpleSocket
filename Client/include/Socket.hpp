@@ -10,22 +10,23 @@
 class Socket    {
 public:
     Socket();
-    int socketID;
-    sockaddr_in socketAddress;
-    void setPort(int port);
-    int setAddress(const std::string &address);
     enum SocketError  {
         SUCESS = 1,
         ADDRESS_INVALID = 0,
         ADDRESS_ERROR = -1
     };
+
+    void setPort(int port);
+    int setAddress(const std::string &address);
+    int socketID;
+    sockaddr_in socketAddress;
 };
 
 class UDPClient : public Socket {
-    public:
+public:
     UDPClient(int port, const std::string &IPAddress);
-    void Send(const std::string& message);
-    void Recive();
+    void sendMessage(const std::string& message);
+    void reciveMessage();
 };
 
 Socket::Socket() : socketID(), socketAddress()  {
@@ -63,12 +64,12 @@ UDPClient::UDPClient(int port, const std::string& IPAddress)    {
     }
 }
 
-void UDPClient::Send(const std::string& message)    {
+void UDPClient::sendMessage(const std::string& message)    {
     std::cout << "[*] Sending packet" << std::endl;
     sendto(socketID, message.c_str(), message.length(), 0, reinterpret_cast<sockaddr *>(&socketAddress), sizeof(socketAddress));
 }
 
-void UDPClient::Recive()    {
+void UDPClient::reciveMessage()    {
     sockaddr_in client;
     socklen_t slen = sizeof(client);
     char client_ip[INET_ADDRSTRLEN], buffer[512];
