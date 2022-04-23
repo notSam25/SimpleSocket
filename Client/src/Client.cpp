@@ -10,8 +10,8 @@ int main()  {
     std::cin >> tPort;
 
     UDPClient client(tPort, tIPAdress);
-    client.Send("This message is going to the nodeJS server!");
-    client.Recive();
+    client.sendMessage("This message is going to the nodeJS server!");
+    client.reciveMessage();
 
     return 0;
 }
